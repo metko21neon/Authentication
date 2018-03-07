@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { Router } from '@angular/router';
+
+import {User} from '../user.model';
+
 import { moveIn, fallIn } from '../router.animations';
 
 @Component({
@@ -11,6 +14,7 @@ import { moveIn, fallIn } from '../router.animations';
     host: {'[@moveIn]': ''}
 })
 export class SignupComponent implements OnInit {
+    user: User = new User;
     state = '';
     error: any;
     constructor(
